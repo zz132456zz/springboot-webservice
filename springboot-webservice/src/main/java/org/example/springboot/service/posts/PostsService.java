@@ -4,11 +4,15 @@ import javafx.geometry.Pos;
 import lombok.RequiredArgsConstructor;
 import org.example.springboot.domain.posts.Posts;
 import org.example.springboot.domain.posts.PostsRepository;
+import org.example.springboot.web.dto.PostsListResponseDto;
 import org.example.springboot.web.dto.PostsResponseDto;
 import org.example.springboot.web.dto.PostsSaveRequestDto;
 import org.example.springboot.web.dto.PostsUpdateRequestDto;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -27,6 +31,13 @@ public class PostsService {
         posts.update(requestDto.getTitle(), requestDto.getContent());
 
         return id;
+    }
+
+    @Transactional(readOnly = true)  // (readOnly = true) 옵션을 주면 트랜잭션 범위는 유지하고 조회 기능만 남겨두어 조회 속도가 개선된다. 등록, 수정, 삭제 기능이 전혀 없는 서비스 메소드에서 사용하는 것이 좋다.
+    public List<PostsListResponseDto> findAllDesc() {
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListResponseDto::new)  // .map(posts -> new PostsListResponseDto(posts))
+                .collect(Collectors.toList());
     }
 
     public PostsResponseDto findById(Long id) {
