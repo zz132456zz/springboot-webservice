@@ -1,13 +1,11 @@
 package org.example.springboot.domain.posts;
 
-import javafx.geometry.Pos;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.springboot.domain.BaseTimeEntity;
 
 import javax.persistence.*;
-import javax.swing.text.StringContent;
 
 @Getter  // 클래스 내 모든 필드의 Getter 메소드 자동 생성
 @NoArgsConstructor  // 기본 생성자 자동 추가

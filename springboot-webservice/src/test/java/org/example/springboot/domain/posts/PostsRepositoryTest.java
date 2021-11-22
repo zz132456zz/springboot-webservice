@@ -1,7 +1,5 @@
 package org.example.springboot.domain.posts;
 
-import javafx.geometry.Pos;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -3,8 +3,6 @@ package org.example.springboot.web.dto;
 import lombok.Getter;
 import org.example.springboot.domain.posts.Posts;
 
-import java.util.Locale;
-
 @Getter
 public class PostsResponseDto {
     private Long id;

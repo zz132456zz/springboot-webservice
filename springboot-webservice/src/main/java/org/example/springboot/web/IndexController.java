@@ -1,6 +1,5 @@
 package org.example.springboot.web;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import lombok.RequiredArgsConstructor;
 import org.example.springboot.config.auth.LoginUser;
 import org.example.springboot.config.auth.dto.SessionUser;
@@ -10,8 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import javax.servlet.http.HttpSession;
 
 @RequiredArgsConstructor
 @Controller

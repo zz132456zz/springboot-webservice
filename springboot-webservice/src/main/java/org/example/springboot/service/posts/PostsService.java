@@ -1,6 +1,5 @@
 package org.example.springboot.service.posts;
 
-import javafx.geometry.Pos;
 import lombok.RequiredArgsConstructor;
 import org.example.springboot.domain.posts.Posts;
 import org.example.springboot.domain.posts.PostsRepository;
